@@ -18,14 +18,16 @@ private lateinit var binding: ArticlesFragmentBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = ArticlesFragmentBinding.inflate(inflater, container, false)
-        viewModel = ViewModelProvider(this)[articlesViewModel::class.java]
-        viewModel.getArticles()
         return binding.root
 
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        viewModel = ViewModelProvider(
+            this,
+            ArticleViewModelFactory.getInstance()
+        )[articlesViewModel::class.java]
         viewModel.getArticles()
     }
 
