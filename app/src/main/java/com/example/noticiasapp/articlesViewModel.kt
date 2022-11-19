@@ -11,9 +11,11 @@ import kotlinx.coroutines.launch
 class articlesViewModel(private val headlinesUseCase: HeadlinesUseCase):ViewModel() {
     val articles = MutableLiveData<Articles>()
 
+
     fun getArticles() {
         viewModelScope.launch(Dispatchers.IO) {
             articles.postValue(headlinesUseCase.getHeadlines("pt","business"))
         }
+
     }
 }

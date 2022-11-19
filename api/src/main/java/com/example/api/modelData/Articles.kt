@@ -7,9 +7,9 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class Articles(
     @Json(name = "articles")
-    val articles: List<Article>?=null,
+    val articles: MutableList<Article>?=null,
     @Json(name = "status")
-    val status: String?=null ,
+    val status: String?=null,
     @Json(name = "totalResults")
     val totalResults: Int?=null
 )

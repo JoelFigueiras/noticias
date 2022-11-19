@@ -5,7 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.example.api.modelData.Articles
 import com.example.noticiasapp.databinding.ArticlesFragmentBinding
 
 class articlesFragment: Fragment() {
@@ -29,6 +31,7 @@ private lateinit var binding: ArticlesFragmentBinding
             ArticleViewModelFactory.getInstance()
         )[articlesViewModel::class.java]
         viewModel.getArticles()
+
     }
 
 }
